@@ -1,22 +1,22 @@
 import "./App.css";
-import Characters from "./components/Products/Characters/Characters";
-import useSWR from "swr";
-
-//fetcher
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-//api endpoint
-const url = "https://fakestoreapi.com/products";
+import { useState } from "react";
+import Comments from "./components/Comments/Comments";
 
 function App() {
-  const { data, error, isLoading } = useSWR(url, fetcher);
+  const [showComments, setShowComments] = useState(false);
 
-  if (error) return <p>Error loading data</p>;
-  if (isLoading) return <div>loading...</div>;
   return (
     <>
       <main>
-        <h1>Pagination with useSWR</h1>
-        <Characters />
+        <h2>Prefetching data with useSWR</h2>
+        <p>This demonstrae how to preload data with SWR</p>
+        <button
+          onClick={() => setShowComments(true)}
+          style={{ backgroundColor: "blue", color: "white" }}
+        >
+          Show all comments
+        </button>
+        {showComments && <Comments />}
       </main>
     </>
   );
