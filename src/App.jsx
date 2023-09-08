@@ -1,5 +1,5 @@
 import "./App.css";
-import Products from "./components/Products/Products";
+import Characters from "./components/Products/Characters/Characters";
 import useSWR from "swr";
 
 //fetcher
@@ -15,8 +15,8 @@ function App() {
   return (
     <>
       <main>
-        <h1>Data fetching with useSWR </h1>
-        <Products data={data} />
+        <h1>Pagination with useSWR</h1>
+        <Characters />
       </main>
     </>
   );

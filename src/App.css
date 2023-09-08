@@ -1,4 +1,21 @@
-.pokemon__card {
-  background-color: aqua;
-  width: 200px;
+.character_card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+.character_card__item {
+  flex-basis: 24%;
+
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.character_btn {
+  background-color: #314cb6;
+  margin-left: 2rem;
+  color: #fff;
+}
+.character_btn:hover,
+.character_btn:active {
+  background-color: #0a81d1;
 }
